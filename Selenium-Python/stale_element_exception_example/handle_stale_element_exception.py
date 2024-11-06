@@ -10,12 +10,15 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import StaleElementReferenceException
-
+import os
 
 driver = webdriver.Chrome()
 driver.implicitly_wait(5)
 
-driver.get("file:///Users/admas/Projects/YouTube/Selenium-Python/stale_element_exception_example/page_to_cause_stale_element_exception.html")
+directory = os.path.dirname(os.path.abspath(__file__))
+url = os.path.join(f"file://{directory}/page_to_cause_stale_element_exception.html")
+
+driver.get(url)
 
 try:
     button1 = driver.find_element(By.ID, 'myButton1')
@@ -30,4 +33,4 @@ except StaleElementReferenceException as e:
     button2.click()
 
 print("PASS")
-# driver.quit()
+driver.quit()
