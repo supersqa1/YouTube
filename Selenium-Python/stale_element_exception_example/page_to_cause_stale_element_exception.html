@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stale Element Exception Example</title>
+    <script>
+        function updateDOM() {
+            // Change the DOM by removing and re-adding the button
+            var button = document.getElementById("myButton2");
+            var parent = button.parentNode;
+            parent.removeChild(button);
+            // Delay re-adding to ensure the element is stale
+            setTimeout(() => {
+                parent.appendChild(button);
+            }, 1000); // 1 second delay
+        }
+    </script>
+</head>
+<body>
+    <button id="myButton1" onclick="updateDOM()">Step 1</button>
+    <button id="myButton2" onclick="updateDOM()">Step 2</button>
+</body>
+</html>
