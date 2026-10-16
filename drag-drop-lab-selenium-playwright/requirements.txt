@@ -1,0 +1,2 @@
+selenium>=4.35,<5
+playwright>=1.57,<2
