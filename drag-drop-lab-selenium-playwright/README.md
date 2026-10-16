@@ -8,7 +8,6 @@ This folder contains the practice website and Python code for two videos: **drag
 | --- | --- |
 | [drag-and-drop-demo-Selenium.py](./drag-and-drop-demo-Selenium.py) | **Selenium video.** Shows `ActionChains` for basic, coordinate-based, and movement-sensitive dragging, plus JavaScript drag events for HTML5. |
 | [drag-and-drop-demo-Playwright.py](./drag-and-drop-demo-Playwright.py) | **Playwright video.** Shows `drag_to()`, target positions, movement steps, and a shared `DataTransfer` object for HTML5. |
-| [codex-drag-and-drop-demo-Playwright.py](./codex-drag-and-drop-demo-Playwright.py) | An alternate Playwright example covering the same four scenarios. Start with the main Playwright file above to follow the video. |
 | `index.html`, `app.js`, `styles.css`, and the four page folders | The practice website used by both videos. No Node.js, database, account, or backend is needed. |
 | `*.excalidraw` | Editable teaching diagrams. These are optional and are not needed to run the code. |
 
@@ -130,8 +129,6 @@ Save the file and rerun its command after changing the selected function. Use on
 | **4. DataTransfer** — `/html5/` | `data_transfer_drag_html5()`: executes JavaScript to dispatch HTML5 drag events with a shared `DataTransfer` payload. | `data_transfer_drag_html5()`: creates a `DataTransfer` handle and passes it through `dragstart`, `dragenter`, `dragover`, and `drop`. |
 
 The coordinate page accepts drops only near the top insertion line. The movement page requires at least six movement events. The HTML5 page requires the job ID in the drag payload. The pages look similar, but these implementation differences explain why the same automation technique does not work everywhere.
-
-The alternate `codex-drag-and-drop-demo-Playwright.py` runs **basic drag** by default. You can run it with `python codex-drag-and-drop-demo-Playwright.py` and select another function in its existing `try:` block.
 
 ## Why does the script pause at `(Pdb)`?
 
